@@ -240,7 +240,7 @@ export default class RecognitionManager {
         results[i].isFinal &&
         (!isAndroid() || results[i][0].confidence > 0)
       ) {
-        const finalTranscript = results[i][0].transcript
+        let finalTranscript = results[i][0].transcript
         finalTranscript += this.boost(results[i])
 
         this.updateFinalTranscript(results[i][0].transcript)
